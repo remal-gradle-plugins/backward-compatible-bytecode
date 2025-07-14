@@ -9,7 +9,7 @@ on:
     - 'v*'
   pull_request: { }
   schedule:
-  - cron: '2 7 * * *' # sync-with-template: adjust
+  - cron: '33 14 * * *' # sync-with-template: adjust
   workflow_dispatch: { }
 
 defaults:
