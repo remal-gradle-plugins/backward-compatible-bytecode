@@ -7,11 +7,13 @@
 [![configuration cache: supported](https://img.shields.io/static/v1?label=configuration%20cache&message=supported&color=success)](https://docs.gradle.org/current/userguide/configuration_cache.html)
 
 <!--plugin-usage:name.remal.backward-compatible-bytecode-->
+
 ```groovy
 plugins {
-    id 'name.remal.backward-compatible-bytecode' version '1-SNAPSHOT'
+  id 'name.remal.backward-compatible-bytecode' version '0-SNAPSHOT'
 }
 ```
+
 <!--/plugin-usage-->
 
 &nbsp;
