@@ -34,8 +34,8 @@ gradlePlugin {
     plugins {
         'name.remal.backward-compatible-bytecode' {
             id = 'name.remal.backward-compatible-bytecode'
-            implementationClass = 'name.remal.gradle_plugins.backward_compatible_bytecode.TemplatePlugin'
-            displayName = 'Plugin'
+            implementationClass = 'name.remal.gradle_plugins.backward_compatible_bytecode.BackwardCompatibleBytecodePlugin'
+            displayName = 'Make bytecode compatible with older JVM versions or library APIs'
             description = property('repository-description')
         }
     }
