@@ -1,0 +1,20 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+buildscript {
+    dependencies {
+        classpath 'name.remal.gradle-plugins.toolkit:build-logic:0.73.2'
+        classpath 'name.remal.gradle-plugins.classes-relocation:classes-relocation:2.0.0-rc-10'
+    }
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+apply plugin: 'name.remal.toolkit.build-logic'
+
+dependencies {
+    api 'org.ow2.asm:asm-tree'
+}

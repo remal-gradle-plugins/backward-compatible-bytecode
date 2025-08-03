@@ -1,3 +1,5 @@
+import index.jdk.GenerateJdkIndex
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 buildscript {
@@ -25,9 +27,23 @@ apply plugin: 'name.remal.toolkit.build-logic'
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+subprojects {
+    pluginManager.withPlugin('maven-publish') {
+        publishing.publications.withType(MavenPublication).configureEach {
+            artifactId = "${rootProject.name}-${project.name}"
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 apply plugin: 'java-gradle-plugin'
 
 dependencies {
+    optional 'org.ow2.asm:asm-util'
+
+    api 'org.ow2.asm:asm-tree'
+    api 'org.ow2.asm:asm-analysis'
 }
 
 gradlePlugin {
@@ -39,4 +55,14 @@ gradlePlugin {
             description = property('repository-description')
         }
     }
+}
+
+buildTimeConstants {
+    property('plugin-id', gradlePlugin.plugins.named('name.remal.backward-compatible-bytecode').map { it.id })
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+tasks.register(GenerateJdkIndex.simpleName.uncapitalize(), GenerateJdkIndex) {
+    minVersion = 11
 }
