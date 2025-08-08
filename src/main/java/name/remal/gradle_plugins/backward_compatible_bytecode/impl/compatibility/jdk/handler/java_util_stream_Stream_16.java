@@ -89,7 +89,7 @@ public class java_util_stream_Stream_16 implements JdkCompatibilityHandler {
         }
     }
 
-    @SuppressWarnings({"rawtypes", "Java9CollectionFactory", "unchecked"})
+    @SuppressWarnings({"UnusedMethod", "rawtypes", "Java9CollectionFactory", "unchecked"})
     private static class Implementation implements CompatibilityImplementation {
 
         public static List toList(Stream stream) {

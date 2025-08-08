@@ -23,7 +23,7 @@ abstract class BackwardCompatibleBytecodeAction implements Action<Task>, Describ
         fileTree.include("**/*.class");
         fileTree.visit(details -> {
             if (!details.isDirectory()) {
-                var path = details.getFile().toPath();
+                //var path = details.getFile().toPath();
             }
         });
     }
