@@ -1,4 +1,4 @@
-@NonNullApi
+@NullMarked
 package index.jdk;
 
-import org.gradle.api.NonNullApi;
+import org.jspecify.annotations.NullMarked;
